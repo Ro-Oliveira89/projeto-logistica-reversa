@@ -1,0 +1,53 @@
+# Parâmetros do gerador de dados sintéticos.
+# Todos os valores são fictícios: propostas aprovadas na especificação do projeto.
+semente: 42
+
+periodo:
+  inicio: "2026-01-05"
+  fim: "2026-09-17"
+
+volume:
+  total_oms: 2000
+  tolerancia: 200
+
+numeracao:
+  primeira_om: 9000001
+
+estrutura:
+  quantidade_polos: 14
+  quantidade_ufs: 12
+  prefixo_polo: "POLO_"
+  prefixo_representante: "REP_"
+  modais: ["MODAL_A", "MODAL_B", "MODAL_C"]
+  prefixo_franquia: "FRANQUIA "
+
+prazos:
+  coleta_padrao_dias_uteis: 2
+  margem_embarque_dias: 2
+  coleta_especial:
+    quantidade_cidades: 4
+    dias_minimo: 3
+    dias_maximo: 5
+  leadtime:
+    dias_minimo: 2
+    dias_maximo: 12
+
+# Falhas a injetar para a aba QUALIDADE. "minimo/maximo" são quantidades de linhas;
+# "frac_min/frac_max" são frações da base indicada em "base".
+falhas:
+  Q03_embarque_absurdo: {minimo: 5, maximo: 10}
+  Q05_coleta_antes_solicitacao: {frac_min: 0.02, frac_max: 0.04, base: coletas}
+  Q06_embarque_antes_coleta: {minimo: 3, maximo: 5}
+  Q07_entrega_antes_embarque: {minimo: 5, maximo: 10}
+  Q08_entrega_antes_solicitacao: {minimo: 2, maximo: 4}
+  Q09_entrega_sem_embarque: {frac_min: 0.03, frac_max: 0.05, base: entregas}
+  Q10_disp_depois_solicitacao: {minimo: 4, maximo: 8}
+  Q11_espaco_em_uf: {minimo: 20, maximo: 40}
+  Q13_cidade_sem_prazo: {minimo: 3, maximo: 5}
+  Q15_qtd_vazia: {minimo: 10, maximo: 15}
+  Q16_qtd_zero: {frac_min: 0.15, frac_max: 0.25, base: oms}
+  Q17_dacte_vazio: {minimo: 20, maximo: 30}
+  Q18_origens_fora_da_base: {minimo: 3, maximo: 5}
+  excecoes_manuais:
+    sigla: {minimo: 2, maximo: 3}
+    previsao_coleta: {minimo: 2, maximo: 2}

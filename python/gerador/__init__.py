@@ -1,0 +1,1 @@
+"""Gerador de dados sintéticos do projeto de logística reversa."""
