@@ -1,0 +1,19 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Dados e arquivos de produção: NUNCA versionar
+PRODUCAO/
+data/real/
+data/raw/
+
+# Temporários do Office e do editor
+~$*
+*.tmp
+.vscode/
+
+# Segredos
+.env
