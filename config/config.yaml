@@ -15,12 +15,14 @@ numeracao:
 
 estrutura:
   quantidade_polos: 14
+  quantidade_representantes: 10
+  cidades_atendidas: 100
   quantidade_ufs: 12
   prefixo_polo: "POLO_"
   prefixo_representante: "REP_"
   modais: ["MODAL_A", "MODAL_B", "MODAL_C"]
   prefixo_franquia: "FRANQUIA "
-
+  
 prazos:
   coleta_padrao_dias_uteis: 2
   margem_embarque_dias: 2

@@ -4,6 +4,8 @@ from __future__ import annotations
 import numpy as np
 import pandas as pd
 
+UM_DIA = np.timedelta64(1, "D")
+
 # (data, feriado, âmbito). As datas são públicas; o âmbito segue a classificação do projeto.
 _FERIADOS = [
     ("2026-01-01", "Confraternização Universal", "Nacional"),
@@ -54,5 +56,5 @@ def dias_uteis_entre(inicio, fim, feriados) -> int:
     b = np.datetime64(pd.Timestamp(fim).date())
     h = _como_array(feriados)
     if b >= a:
-        return int(np.busday_count(a, b + 1, holidays=h))
-    return -int(np.busday_count(b, a + 1, holidays=h))
+        return int(np.busday_count(a, b + UM_DIA, holidays=h))
+    return -int(np.busday_count(b, a + UM_DIA, holidays=h))
