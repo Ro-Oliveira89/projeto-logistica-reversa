@@ -37,7 +37,11 @@ def carregar_municipios(caminho: Path | str) -> pd.DataFrame:
     municipios = municipios[["UF", "CIDADE"]].dropna()
     municipios["UF"] = municipios["UF"].str.strip().str.upper()
     municipios["CIDADE"] = municipios["CIDADE"].str.strip().str.upper()
-    return municipios.drop_duplicates().reset_index(drop=True)
+
+    # a ordenação fixa garante o mesmo resultado, não importa a ordem das linhas do arquivo
+    return municipios.drop_duplicates().sort_values(
+        ["UF", "CIDADE"]
+    ).reset_index(drop=True)
 
 
 def escolher_cidades_atendidas(cfg: dict, rng: np.random.Generator, municipios: pd.DataFrame) -> pd.DataFrame:
