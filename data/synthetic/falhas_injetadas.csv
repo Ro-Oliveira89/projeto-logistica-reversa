@@ -1,0 +1,17 @@
+﻿CODIGO,DESCRICAO,INJETADO,MEDIDO
+Q03,Data de embarque absurda (ano distante ou texto),5,5
+Q05,Coleta efetiva anterior à solicitação,66,66
+Q06,Embarque anterior à coleta efetiva,3,3
+Q07,Entrega anterior ao embarque (inclui as da Q08),5,5
+Q08,Entrega anterior à solicitação,2,2
+Q09,Entrega registrada sem data de embarque,88,88
+Q10,Disponibilização posterior à solicitação,7,7
+Q11,UF com espaço sobrando,24,24
+Q13,OMs de cidades sem prazo no LEADTIME,4,4
+Q15,QTD vazia,11,11
+Q16,QTD igual a zero,422,422
+Q17,Entrega registrada com DACTE vazio,21,21
+Q18,Origens fora da base de municípios (documentadas como exceção),5,5
+Exc_sigla,Exceções manuais de polo (SIGLA_MANUAL),3,3
+Exc_previsao,Exceções manuais de previsão de coleta (PREV_COLETA_MANUAL),2,2
+Q18 após exceções,OMs de origens fora da base e sem exceção documentada,0,0
